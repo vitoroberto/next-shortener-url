@@ -14,7 +14,7 @@ export type AddressFormData = {
 
 export type ActionResponse = {
   success: boolean;
-  defaultValue?: string;
+  defaultValue?: AddressFormData;
   message?: string;
   slug?: string;
   originalUrl?: string;
@@ -50,7 +50,7 @@ export default function Form() {
             id="url"
             type="url"
             placeholder="https://exemplo.com"
-            defaultValue={state.defaultValue}
+            defaultValue={state.defaultValue?.url}
             required
           />
           {state.errors?.url && (
@@ -65,6 +65,7 @@ export default function Form() {
             id="slug"
             type="text"
             placeholder="slug"
+            defaultValue={state.defaultValue?.slug}
             maxLength={40}
             required
           />

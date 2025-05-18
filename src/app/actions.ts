@@ -5,13 +5,18 @@ import prisma from "@/lib/db";
 import { z } from "zod";
 
 const urlSchema = z.object({
-  url: z.string().url().trim().toLowerCase().min(1, "url é obrigatório"),
+  url: z.string().url().trim().toLowerCase().min(1, "url é obrigatório!"),
   slug: z
     .string()
     .trim()
     .toLowerCase()
-    .min(1, "slug é obrigatório")
-    .max(40, "slug é muito longo"),
+    .min(1, "slug é obrigatório!")
+    .max(40, "slug é muito longo!")
+    .regex(
+      /^[a-z0-9\sáàâãéèêíïóôõöúçñ]+$/,
+      "slug deve conter apenas letras, números e espaços!",
+    )
+    .transform((slug) => slug.replace(/\s+/g, "-")),
 });
 
 export async function createShortUrl(
@@ -29,7 +34,7 @@ export async function createShortUrl(
     return {
       success: false,
       errors: validatedData.error.flatten().fieldErrors,
-      defaultValue: rawData.url,
+      defaultValue: rawData,
     };
   }
 
@@ -43,8 +48,8 @@ export async function createShortUrl(
     if (slugAlreadyExists) {
       return {
         success: false,
-        message: "Slug já existe",
-        defaultValue: rawData.url,
+        message: "Slug já existe!",
+        defaultValue: rawData,
       };
     }
 
@@ -63,7 +68,7 @@ export async function createShortUrl(
   } catch {
     return {
       success: false,
-      message: "Ocorreu um erro inesperado ao criar o link encurtado",
+      message: "Ocorreu um erro inesperado ao criar o link encurtado!",
     };
   }
 }
