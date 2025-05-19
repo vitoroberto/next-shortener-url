@@ -1,36 +1,38 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<h1 align="center">
+  next-shortener-url
+</h1>
 
-## Getting Started
+<p align="center">
+  <a href="#technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#how-to-use">How To Use</a>
+</p>
 
-First, run the development server:
+![website screenshot](./page-photo.png)
+
+## Technologies
+
+This project was developed with the following technologies:
+
+- [TypeScript](https://www.typescriptlang.org/)
+- [React](https://reactjs.org/)
+- [Next.js](https://nextjs.org/)
+- [MongoDB](https://www.mongodb.com/products/platform/atlas-database)
+- [Prisma ORM](https://www.prisma.io/)
+- [Zod](https://zod.dev/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Lucide Icons](https://lucide.dev/)
+
+## How to use
+
+To clone and run this application, you'll need [Git](https://git-scm.com), [Node.js v22.11.0](https://nodejs.org/en/) or higher + [pnpm v9.15.0](https://pnpm.io/) or higher installed on your computer. From your command line:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Clone this repository
+$ git clone https://github.com/vitoroberto/next-shortener-url.git
+# Go into the repository
+$ cd next-shortener-url
+# Install dependencies
+$ pnpm install
+# Run the app
+$ pnpm run dev
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
